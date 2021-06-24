@@ -1,0 +1,15 @@
+{
+  "request": {
+    "urlPath": "/blog/posts",
+    "method": "GET",
+    "queryParameters": {
+      "tags": {
+        "equalTo": "healthcare"
+      }
+    }
+  },
+  "response": {
+    "status": 500,
+    "jsonBody": {}
+  }
+}
