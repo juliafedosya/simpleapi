@@ -1,7 +1,7 @@
 package com.hatchways.demo.service;
 
 
-import com.hatchways.demo.client.HatchwaysApiClient;
+import com.hatchways.demo.client.BlogPostApiClient;
 import com.hatchways.demo.dto.BlogResponseDto;
 import com.hatchways.demo.dto.PostResponseDto;
 import java.util.List;
@@ -21,18 +21,18 @@ class BlogServiceImplTest {
   private static final String TAG = "science";
 
   @Mock
-  private HatchwaysApiClient hatchwaysApiClient;
+  private BlogPostApiClient blogPostApiClient;
 
   private BlogService blogService;
 
   @BeforeEach
   void setUp() {
-    blogService = new BlogServiceImpl(hatchwaysApiClient);
+    blogService = new BlogServiceImpl(blogPostApiClient);
   }
 
   @Test
   void shouldReturnCompletedFutureWithValues() {
-    BDDMockito.given(hatchwaysApiClient.findBlogsData(TAG))
+    BDDMockito.given(blogPostApiClient.findBlogsData(TAG))
         .willReturn(prepareMockData());
 
     CompletableFuture<BlogResponseDto> response = blogService.findBlogPosts(TAG);

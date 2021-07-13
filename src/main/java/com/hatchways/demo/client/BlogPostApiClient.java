@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "hatchwaysApiClient",
-    url = "${hatchways.api.url}"
+@FeignClient(name = "blogPostApiClient",
+    url = "${assessment.api.url}"
 )
-public interface HatchwaysApiClient {
+public interface BlogPostApiClient {
 
-  @GetMapping(path = "${hatchways.api.path}")
+  @GetMapping(path = "${assessment.api.path}")
   BlogResponseDto findBlogsData(@RequestParam String tag);
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HatchwaysApiClientFallback implements HatchwaysApiClient {
+public class BlogPostApiClientFallback implements BlogPostApiClient {
 
   @Override
   public BlogResponseDto findBlogsData(String tag) {
